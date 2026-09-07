@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | Saint Michael Web Services Limited</title>
+<meta name="description" content="Contact Saint Michael Web Services Limited in London for web design, development and digital strategy enquiries.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230b1d3a'/><text y='68' x='50' text-anchor='middle' font-size='54' font-family='sans-serif' font-weight='bold' fill='%234da3ff'>S</text></svg>">
+</head>
+<body>
+
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">SM</span>
+      <span class="brand-text">Saint Michael<small>Web Services Ltd</small></span>
+    </a>
+    <nav class="nav" id="primaryNav" aria-label="Primary">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="contact.html" class="nav-link active">Contact</a>
+      <a href="contact.html" class="btn btn-primary nav-cta">Get a Quote</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primaryNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <section class="page-banner">
+    <div class="container">
+      <p class="eyebrow reveal">Contact</p>
+      <h1 class="reveal">Let's start a conversation</h1>
+      <p class="lead reveal">Tell us what you're planning. We reply to every enquiry within one working day.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container contact-layout">
+
+      <div class="form-card reveal">
+        <h2 style="font-size:1.5rem;margin-bottom:8px;">Send an enquiry</h2>
+        <p style="color:var(--grey-600);margin-bottom:26px;font-size:0.95rem;">Fields marked with * are required.</p>
+
+        <form id="contactForm" novalidate>
+          <div class="field">
+            <label for="name">Full name *</label>
+            <input type="text" id="name" name="name" placeholder="Jane Smith" required>
+            <span class="error-text">Please enter your name.</span>
+          </div>
+
+          <div class="field">
+            <label for="email">Email address *</label>
+            <input type="email" id="email" name="email" placeholder="jane@company.co.uk" required>
+            <span class="error-text">Please enter a valid email address.</span>
+          </div>
+
+          <div class="field">
+            <label for="company">Company</label>
+            <input type="text" id="company" name="company" placeholder="Company Ltd">
+          </div>
+
+          <div class="field">
+            <label for="service">Service of interest *</label>
+            <select id="service" name="service" required>
+              <option value="">Please select…</option>
+              <option>Web Design</option>
+              <option>Web Development</option>
+              <option>E-Commerce</option>
+              <option>SEO &amp; Analytics</option>
+              <option>Hosting &amp; Deployment</option>
+              <option>Maintenance &amp; Support</option>
+            </select>
+            <span class="error-text">Please choose a service.</span>
+          </div>
+
+          <div class="field">
+            <label for="message">Project details *</label>
+            <textarea id="message" name="message" placeholder="A few lines about your goals, timeline and budget…" required></textarea>
+            <span class="error-text">Please give us at least a sentence about your project.</span>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-lg">Send Enquiry</button>
+          <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+
+      <div class="reveal">
+        <div class="info-list">
+          <div class="info-item">
+            <div class="card-icon">&#9993;</div>
+            <div>
+              <h4>Email</h4>
+              <a href="mailto:hello@saintmichaelweb.co.uk">hello@saintmichaelweb.co.uk</a>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="card-icon">&#9742;</div>
+            <div>
+              <h4>Telephone</h4>
+              <a href="tel:+442012345678">+44 20 1234 5678</a>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="card-icon">&#9679;</div>
+            <div>
+              <h4>Office</h4>
+              <p>London, United Kingdom</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="card-icon">&#9200;</div>
+            <div>
+              <h4>Opening hours</h4>
+              <p>Monday to Friday, 09:00–18:00 GMT</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="map-embed">
+          <p>Saint Michael Web Services Limited<br>London, United Kingdom<br><br>Meetings by appointment — remote or in person.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="container cta-inner reveal">
+      <h2>Prefer to talk it through?</h2>
+      <p>Call us during office hours and speak to the person who would run your project.</p>
+      <a href="tel:+442012345678" class="btn btn-primary btn-lg">+44 20 1234 5678</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <a class="brand" href="index.html">
+        <span class="brand-mark">SM</span>
+        <span class="brand-text">Saint Michael<small>Web Services Ltd</small></span>
+      </a>
+      <p class="footer-note">Building the future of digital business from London, United Kingdom.</p>
+    </div>
+    <div>
+      <h4>Pages</h4>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div>
+      <h4>Services</h4>
+      <a href="services.html">Web Design</a>
+      <a href="services.html">Web Development</a>
+      <a href="services.html">E-Commerce</a>
+      <a href="services.html">SEO &amp; Analytics</a>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <a href="mailto:hello@saintmichaelweb.co.uk">hello@saintmichaelweb.co.uk</a>
+      <a href="tel:+442012345678">+44 20 1234 5678</a>
+      <span>London, United Kingdom</span>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p>&copy; <span id="year"></span> Saint Michael Web Services Limited. Registered in England &amp; Wales.</p>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="Back to top">&#8593;</button>
+
+<script src="js/main.js"></script>
+</body>
+</html>
