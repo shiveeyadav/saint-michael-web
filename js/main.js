@@ -58,38 +58,6 @@
     revealItems.forEach(function (el) { el.classList.add('visible'); });
   }
 
-  /* ---------- Animated stat counters ---------- */
-  var counters = document.querySelectorAll('[data-count]');
-
-  function runCounter(el) {
-    var target = parseInt(el.getAttribute('data-count'), 10) || 0;
-    var duration = 1400;
-    var start = null;
-
-    function frame(now) {
-      if (start === null) start = now;
-      var progress = Math.min((now - start) / duration, 1);
-      var eased = 1 - Math.pow(1 - progress, 3);
-      el.textContent = String(Math.round(target * eased));
-      if (progress < 1) requestAnimationFrame(frame);
-    }
-    requestAnimationFrame(frame);
-  }
-
-  if (counters.length && 'IntersectionObserver' in window) {
-    var counterObserver = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (!entry.isIntersecting) return;
-        runCounter(entry.target);
-        counterObserver.unobserve(entry.target);
-      });
-    }, { threshold: 0.5 });
-
-    counters.forEach(function (el) { counterObserver.observe(el); });
-  } else {
-    counters.forEach(function (el) { el.textContent = el.getAttribute('data-count'); });
-  }
-
   /* ---------- FAQ accordion ---------- */
   document.querySelectorAll('.faq-item').forEach(function (item) {
     var btn = item.querySelector('.faq-q');

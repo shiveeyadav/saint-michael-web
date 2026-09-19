@@ -7,8 +7,8 @@ Built with plain HTML, CSS and vanilla JavaScript — no build step, no dependen
 
 | File | Purpose |
 | --- | --- |
-| `index.html` | Home — hero ("Building the Future of Digital Business"), service summary, stats, CTAs |
-| `about.html` | Company story, values, process, numbers |
+| `index.html` | Home — hero ("Building the Future of Digital Business"), service summary, CTAs |
+| `about.html` | Company story, values, process |
 | `services.html` | Six services, pricing packages, FAQ accordion |
 | `contact.html` | Validated enquiry form and contact details |
 
