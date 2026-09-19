@@ -31,7 +31,6 @@ Built with plain HTML, CSS and vanilla JavaScript — no build step, no dependen
 - Fully responsive (mobile-first breakpoints at 980px, 760px, 420px)
 - Sticky header that condenses on scroll, animated mobile menu
 - Scroll-reveal animations via `IntersectionObserver`
-- Animated statistic counters
 - FAQ accordion
 - Client-side contact form validation
 - Back-to-top button

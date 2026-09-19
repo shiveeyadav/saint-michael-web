@@ -124,7 +124,7 @@
         btn.textContent = original;
         form.reset();
         if (status) {
-          status.textContent = 'Thank you — your enquiry has been received. We will reply within one working day.';
+          status.textContent = 'Thank you — your enquiry has been received. We will be in touch soon.';
           status.classList.add('show');
         }
       }, 900);
