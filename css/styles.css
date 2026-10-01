@@ -355,6 +355,11 @@ h3 { font-size: 1.25rem; }
   font-size: 0.93rem;
 }
 .form-status.show { display: block; animation: fadeUp 0.5s var(--ease) both; }
+.form-status.error {
+  background: #fff5f6;
+  border-color: rgba(224, 82, 106, 0.4);
+  color: #d13b52;
+}
 
 .info-list { display: grid; gap: 18px; }
 .info-item {

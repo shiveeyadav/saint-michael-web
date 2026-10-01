@@ -118,16 +118,48 @@
       btn.disabled = true;
       btn.textContent = 'Sending…';
 
-      // Static site: no backend. Simulate submission, then confirm.
-      setTimeout(function () {
+      function finish(message, failed) {
         btn.disabled = false;
         btn.textContent = original;
-        form.reset();
-        if (status) {
-          status.textContent = 'Thank you — your enquiry has been received. We will be in touch soon.';
-          status.classList.add('show');
-        }
-      }, 900);
+        if (!status) return;
+        status.textContent = message;
+        status.classList.toggle('error', Boolean(failed));
+        status.classList.add('show');
+      }
+
+      // FormSubmit mirrors the form's action under /ajax/, where it answers with JSON
+      // instead of redirecting away from the page.
+      var endpoint = form.getAttribute('action')
+        .replace('https://formsubmit.co/', 'https://formsubmit.co/ajax/');
+
+      var payload = {};
+      new FormData(form).forEach(function (value, key) { payload[key] = value; });
+
+      // Makes "Reply" in the notification email answer the enquirer directly.
+      if (payload.email) payload._replyto = payload.email;
+
+      fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(payload)
+      })
+        .then(function (res) {
+          return res.json().catch(function () { return null; });
+        })
+        .then(function (data) {
+          // FormSubmit replies 200 even when it rejects a submission, so the only
+          // trustworthy signal that the enquiry was accepted is `success`.
+          if (data && String(data.success) === 'true') {
+            form.reset();
+            finish('Thank you — your enquiry has been received. We will be in touch soon.', false);
+          } else {
+            finish('Sorry — we could not send your enquiry just now. Please email us directly at duarte@saintmichaelwebservices.com or call +44 7561 622086.', true);
+          }
+        })
+        .catch(function () {
+          // Network-level failure: keep what the visitor typed so they can retry.
+          finish('Sorry — your enquiry could not be sent. Please check your connection and try again, or email us directly at duarte@saintmichaelwebservices.com.', true);
+        });
     });
   }
 
