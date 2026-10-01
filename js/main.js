@@ -128,9 +128,17 @@
       }
 
       // FormSubmit mirrors the form's action under /ajax/, where it answers with JSON
-      // instead of redirecting away from the page.
-      var endpoint = form.getAttribute('action')
-        .replace('https://formsubmit.co/', 'https://formsubmit.co/ajax/');
+      // instead of redirecting away from the page. A cached copy of the page from
+      // before this form had an action would otherwise strand the visitor on
+      // "Sending…", so bail out with the fallback contact details instead.
+      var action = form.getAttribute('action') || '';
+
+      if (action.indexOf('https://formsubmit.co/') !== 0) {
+        finish('Sorry — the enquiry form is temporarily unavailable. Please email us directly at duarte@saintmichaelwebservices.com or call +44 7561 622086.', true);
+        return;
+      }
+
+      var endpoint = action.replace('https://formsubmit.co/', 'https://formsubmit.co/ajax/');
 
       var payload = {};
       new FormData(form).forEach(function (value, key) { payload[key] = value; });
